@@ -18,6 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { overflow-x: hidden; max-width: 100%; }
     :root {
       --navy: #015b99;
       --navy2: #014a80;
@@ -167,9 +168,9 @@
     /* ── TOOLBAR ── */
 
     .view-toggle { display: flex; border: 1px solid rgba(255,255,255,0.3); border-radius: var(--radius); overflow: hidden; background: rgba(255,255,255,0.15); }
-    .view-toggle button { border: none; background: transparent; padding: 0 14px; height: 36px; cursor: pointer; font-size: 13px; font-family: 'DM Sans', sans-serif; color: var(--text-muted); display: flex; align-items: center; gap: 6px; transition: all 0.15s; }
+    .view-toggle button { border: none; background: transparent; padding: 0 14px; height: 36px; cursor: pointer; font-size: 13px; font-family: 'Outfit', sans-serif; font-weight: 500; color: #fff; display: flex; align-items: center; gap: 6px; transition: all 0.15s; }
     .view-toggle button + button { border-left: 1px solid rgba(255,255,255,0.2); }
-    .view-toggle button.active { background: rgba(255,255,255,0.25); color: #fff; font-weight: 600; }
+    .view-toggle button.active { background: rgba(255,255,255,0.25); color: #fff !important; font-weight: 700; }
     .view-toggle button:hover:not(.active) { background: rgba(255,255,255,0.18); color: #fff; }
     .result-count { font-size: 13px; color: rgba(255,255,255,0.7); margin-left: auto; white-space: nowrap; }
     .legend { display: flex; gap: 14px; align-items: center; }
@@ -273,8 +274,11 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 640px) {
-      header { padding: 1rem; }
-      .header-inner { max-width: 100%; }
+      header { padding: 0.75rem 1rem; }
+      .header-inner { max-width: 100%; flex-wrap: wrap; gap: 6px; row-gap: 4px; }
+      .header-inner > div:first-child { order: 1; flex: 1; }
+      .header-inner .hdr-ttl { order: 2; flex: 1; text-align: right; margin-left: 0; font-size: .6rem; }
+      .header-inner .header-btn { order: 3; width: 100%; text-align: center; justify-content: center; padding: 9px; margin-left: 0 !important; border-radius: 8px; }
       .header-title { font-size: 17px; }
       .form-section { padding: 0.75rem 1rem; }
       .form-inner { width: 100%; }
