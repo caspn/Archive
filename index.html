@@ -205,15 +205,15 @@
     .badge-out   { background: var(--red-light);    color: var(--red); }
 
     /* ── TABLE DESKTOP ── */
-    .table-container { max-width: 80%; margin: 0 auto; }
+    .table-container { max-width: 80%; width: 80%; margin: 0 auto; }
     .table-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); }
     table { width: 100%; border-collapse: collapse; table-layout: fixed; }
     thead th { text-align: left; padding: 11px 16px; font-size: 0.71rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--cas-blue); background: var(--surface2); border-bottom: 1px solid var(--border); cursor: pointer; user-select: none; }
-    thead th:first-child { width: 56px; min-width: 56px; max-width: 56px; cursor: default; }
+    thead th:first-child { width: 64px; min-width: 64px; max-width: 64px; cursor: default; }
     tbody td:first-child { vertical-align: middle; text-align: center; }
-    thead th.col-name { width: 50%; }
-    thead th.col-code { width: 15%; }
-    thead th.col-qty  { width: 35%; }
+    thead th.col-name { width: auto; }
+    thead th.col-code { width: 14%; white-space: nowrap; }
+    thead th.col-qty  { width: 22%; white-space: nowrap; }
     thead th:hover { color: var(--text-muted); }
     thead th.sorted { color: var(--text); }
     tbody tr { border-bottom: 1px solid var(--border); transition: background 0.1s; }
