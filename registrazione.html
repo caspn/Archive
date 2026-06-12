@@ -246,35 +246,26 @@
     .qty-info strong { color: var(--text); }
 
     @media (max-width: 600px) {
-      header { padding: 0 13px; height: auto; min-height: 56px; }
-      .header-inner {
-        max-width: 100%;
-        flex-wrap: wrap;
-        padding: 8px 0 0;
-        gap: 0;
-        row-gap: 0;
-      }
-      /* Riga 1: logo+titolo compatti + pulsante a destra */
-      .header-inner .hdr-logo { order: 1; flex: 1; min-width: 0; overflow: hidden; }
-      .header-inner .hdr-ttl { display: none; }
-      /* Logo più piccolo per far stare tutto in una riga */
-      .logo-icon, .header-logo { width: 36px !important; height: 36px !important; }
-      .header-logo img { width: 28px !important; height: 28px !important; }
-      .logo-txt b { font-size: .82rem; line-height: 1.2; }
-      /* Riga 2: pulsante Archivio full width */
-      .header-inner .header-btn {
-        order: 2;
+      header { padding: 0 13px; height: auto; }
+      .header-inner { max-width: 100%; flex-direction: column; padding: 8px 0 0; gap: 0; }
+      .hdr-row1 { display: flex; align-items: center; width: 100%; }
+      .hdr-row1 .hdr-logo { flex: 1; }
+      .hdr-ttl { display: none !important; }
+      .hdr-btn-desktop { display: none !important; }
+      .hdr-btn-mobile {
+        display: flex !important;
         width: calc(100% + 26px);
-        margin: 6px -13px 0 -13px !important;
-        text-align: center;
+        margin: 6px -13px 0;
         justify-content: center;
         padding: 9px 0;
         border-radius: 0;
-        border: none;
-        border-top: 1px solid rgba(255,255,255,0.2);
+        border: none !important;
+        border-top: 1px solid rgba(255,255,255,0.25) !important;
         font-size: 13px;
+        margin-left: -13px;
       }
-      .card { padding: 1.5rem 1.25rem; border-radius: var(--radius-lg); }
+      .logo-txt b { font-size: .88rem; line-height: 1.25; }
+      .card { padding: 1.5rem 1.25rem; }
       main { padding: 1rem 1rem 2.5rem; }
     }
 
@@ -282,22 +273,27 @@
     .logo-txt b { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #fff; display: block; line-height: 1.25; }
     .logo-txt small { font-size: .58rem; color: rgba(255,255,255,.45); letter-spacing: 1.8px; text-transform: uppercase; margin-top: 1px; }
     .hdr-ttl { color: rgba(255,255,255,.75); font-size: .68rem; letter-spacing: 2px; text-transform: uppercase; margin-left: auto; font-weight: 500; white-space: nowrap; }
+    .hdr-btn-mobile { display: none; }
+    .hdr-row1 { display: flex; align-items: center; width: 100%; gap: 16px; }
   </style>
 </head>
 <body>
 
 <header>
   <div class="header-inner">
-    <div class="hdr-logo">
-      <div class="header-logo">
-        <img src="https://raw.githubusercontent.com/caspn/Inventario/main/Logo%20Elenco%20Medici.png" alt="CAS Pordenone">
+    <div class="hdr-row1">
+      <div class="hdr-logo">
+        <div class="header-logo">
+          <img src="https://raw.githubusercontent.com/caspn/Inventario/main/Logo%20Elenco%20Medici.png" alt="CAS Pordenone">
+        </div>
+        <div class="logo-txt">
+          <b>Comitato Sanitario<br>di Pordenone</b>
+        </div>
       </div>
-      <div class="logo-txt">
-        <b>Comitato Sanitario<br>di Pordenone</b>
-      </div>
+      <span class="hdr-ttl">Registrazione movimenti</span>
+      <a href="index.html" class="header-btn hdr-btn-desktop" style="flex-shrink:0;margin-left:8px;">← Archivio</a>
     </div>
-    <span class="hdr-ttl">Registrazione movimenti</span>
-    <a href="index.html" class="header-btn" style="flex-shrink:0;margin-left:8px;">← Archivio</a>
+    <a href="index.html" class="header-btn hdr-btn-mobile">← Archivio</a>
   </div>
 </header>
 
