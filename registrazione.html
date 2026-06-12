@@ -14,6 +14,7 @@
   <link rel="manifest" href="manifest.json">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { overflow-x: hidden; max-width: 100%; }
     :root {
       --navy: #015b99;
       --navy2: #014a80;
@@ -245,10 +246,33 @@
     .qty-info strong { color: var(--text); }
 
     @media (max-width: 600px) {
-      header { padding: 0.6rem 1rem 0.75rem; height: auto; }
-      .header-inner { max-width: 100%; padding: 0; }
-      .header-title { font-size: 17px; }
+      header { padding: 0 13px; height: auto; min-height: 56px; }
+      .header-inner {
+        max-width: 100%;
+        flex-wrap: wrap;
+        padding: 8px 0;
+        gap: 0;
+      }
+      /* Riga 1: logo + titolo */
+      .header-inner .hdr-logo { order: 1; flex: 1; min-width: 0; }
+      /* "Registrazione movimenti" nascosta su mobile */
+      .header-inner .hdr-ttl { display: none; }
+      /* Riga 2: pulsante Archivio full width */
+      .header-inner .header-btn {
+        order: 2;
+        width: calc(100% + 26px);
+        margin: 6px -13px 0;
+        text-align: center;
+        justify-content: center;
+        padding: 9px 0;
+        border-radius: 0;
+        border: none;
+        border-top: 1px solid rgba(255,255,255,0.2);
+        margin-left: -13px !important;
+      }
+      .logo-txt b { font-size: .9rem; }
       .card { padding: 1.5rem 1.25rem; border-radius: var(--radius-lg); }
+      main { padding: 1rem 1rem 2.5rem; }
     }
 
     .logo-txt { display: flex; flex-direction: column; justify-content: center; }
