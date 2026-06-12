@@ -250,27 +250,30 @@
       .header-inner {
         max-width: 100%;
         flex-wrap: wrap;
-        padding: 8px 0;
+        padding: 8px 0 0;
         gap: 0;
+        row-gap: 0;
       }
-      /* Riga 1: logo + titolo */
-      .header-inner .hdr-logo { order: 1; flex: 1; min-width: 0; }
-      /* "Registrazione movimenti" nascosta su mobile */
+      /* Riga 1: logo+titolo compatti + pulsante a destra */
+      .header-inner .hdr-logo { order: 1; flex: 1; min-width: 0; overflow: hidden; }
       .header-inner .hdr-ttl { display: none; }
+      /* Logo più piccolo per far stare tutto in una riga */
+      .logo-icon, .header-logo { width: 36px !important; height: 36px !important; }
+      .header-logo img { width: 28px !important; height: 28px !important; }
+      .logo-txt b { font-size: .82rem; line-height: 1.2; }
       /* Riga 2: pulsante Archivio full width */
       .header-inner .header-btn {
         order: 2;
         width: calc(100% + 26px);
-        margin: 6px -13px 0;
+        margin: 6px -13px 0 -13px !important;
         text-align: center;
         justify-content: center;
         padding: 9px 0;
         border-radius: 0;
         border: none;
         border-top: 1px solid rgba(255,255,255,0.2);
-        margin-left: -13px !important;
+        font-size: 13px;
       }
-      .logo-txt b { font-size: .9rem; }
       .card { padding: 1.5rem 1.25rem; border-radius: var(--radius-lg); }
       main { padding: 1rem 1rem 2.5rem; }
     }
