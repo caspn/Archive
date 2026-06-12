@@ -15,7 +15,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/caspn/Inventario/main/Logo%20Elenco%20Medici.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { overflow-x: hidden; max-width: 100%; }
@@ -60,24 +60,30 @@
     /* ── HEADER ── */
     header {
       background: #015b99;
-      padding: 0 2.5rem;
+      padding: 0 24px;
       height: 64px;
       display: flex;
       align-items: center;
+      justify-content: center;
       position: sticky;
       top: 0;
       z-index: 300;
     }
-    .header-inner { max-width: 860px; margin: 0 auto; width: 100%; display: flex; align-items: center; gap: 1.25rem; padding: 0; }
+    .header-inner { display: flex; align-items: center; gap: 16px; width: 100%; max-width: 80%; }
+    .hdr-logo { display: flex; align-items: center; gap: 11px; flex-shrink: 0; }
     .header-logo {
       width: 44px;
       height: 44px;
-      object-fit: contain;
-      flex-shrink: 0;
+      border-radius: 10px;
       background: #fff;
-      border-radius: 4px;
-      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      padding: 4px;
+      box-shadow: 0 1px 6px rgba(0,0,0,.18);
     }
+    .header-logo img { width: 36px; height: 36px; object-fit: contain; }
     .header-title {
       color: #fff;
       font-family: 'Playfair Display', serif;
@@ -273,37 +279,11 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 640px) {
-      /* ── HEADER MOBILE ── */
-      header {
-        padding: 0;
-        height: auto;
-      }
-      .header-inner {
-        max-width: 100%;
-        flex-wrap: wrap;
-        padding: 0.6rem 1rem 0;
-        gap: 0;
-      }
-      /* Riga 1: logo+titolo a sx, archivio digitale a dx */
-      .header-inner > div:first-child { order: 1; flex: 1; min-width: 0; }
-      .header-inner .hdr-ttl { order: 2; margin-left: auto; padding-left: 8px; flex-shrink: 0; font-size: .58rem; }
-      /* Riga 2: pulsante full width */
-      .header-inner .header-btn {
-        order: 3;
-        width: calc(100% + 2rem);
-        margin: 0.5rem -1rem 0;
-        text-align: center;
-        justify-content: center;
-        padding: 9px 0;
-        border-radius: 0;
-        border-left: none;
-        border-right: none;
-        border-top: 1px solid rgba(255,255,255,0.2);
-        border-bottom: none;
-      }
-      .logo-txt b { font-size: 0.95rem; }
-
-      /* ── RESTO ── */
+      header { padding: 0 13px; height: 56px; }
+      .header-inner { max-width: 100%; }
+      .logo-txt b { font-size: .9rem; }
+      .hdr-ttl { display: none; }
+      .header-btn { margin-left: auto !important; padding: 7px 12px; font-size: 12px; }
       .form-section { padding: 0.75rem 1rem; }
       .form-inner { width: 100%; }
       .form-row-actions { display: flex; flex-wrap: nowrap; width: 100%; gap: 6px; }
@@ -347,9 +327,9 @@
     .header-btn:visited { color: rgba(255,255,255,0.78) !important; text-decoration: none !important; }
 
     .logo-txt { display: flex; flex-direction: column; justify-content: center; }
-    .logo-txt b { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #fff; display: block; line-height: 1.25; font-weight: 700; }
-    .logo-txt small { font-size: .58rem; color: rgba(255,255,255,.45); letter-spacing: 1.8px; text-transform: uppercase; margin-top: 1px; }
-    .hdr-ttl { color: rgba(255,255,255,.75); font-size: .68rem; letter-spacing: 2px; text-transform: uppercase; margin-left: auto; font-weight: 500; white-space: nowrap; }
+    .logo-txt b { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #fff; display: block; line-height: 1.25; }
+    .logo-txt small { font-size: .58rem; color: rgba(255,255,255,.45); letter-spacing: 1.8px; text-transform: uppercase; }
+    .hdr-ttl { color: rgba(255,255,255,.38); font-size: .68rem; letter-spacing: 2px; text-transform: uppercase; margin-left: auto; font-weight: 400; white-space: nowrap; }
 
     .table-controls {
       display: flex;
@@ -372,17 +352,17 @@
 
 <header>
   <div class="header-inner">
-    <div style="display:flex;align-items:center;gap:11px;flex-shrink:0;">
-      <div class="header-logo" style="display:flex;align-items:center;justify-content:center;">
-        <img id="header-logo" src="" alt="CAS Pordenone" style="width:36px;height:36px;object-fit:contain;">
+    <div class="hdr-logo">
+      <div class="header-logo">
+        <img id="header-logo" src="" alt="CAS Pordenone">
       </div>
       <div class="logo-txt">
         <b>Comitato Sanitario<br>di Pordenone</b>
       </div>
-      <span id="last-update" style="display:none;"></span>
     </div>
+    <span id="last-update" style="display:none;"></span>
     <span class="hdr-ttl">Archivio digitale</span>
-    <a href="registrazione.html" class="header-btn" style="margin-left:16px;">Registrazione</a>
+    <a href="registrazione.html" class="header-btn" style="flex-shrink:0;margin-left:8px;">Registrazione</a>
   </div>
 </header>
 

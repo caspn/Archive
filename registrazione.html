@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Registrazione — Archivio CAS Pordenone</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <meta name="theme-color" content="#1B5F8E">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -55,26 +55,26 @@
     /* ── HEADER ── */
     header {
       background: #015b99;
-      padding: 1rem 2.5rem;
+      padding: 0 24px;
+      height: 64px;
       display: flex;
       align-items: center;
+      justify-content: center;
     }
-    .header-inner {
-      max-width: 70%;
-      margin: 0 auto;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-    }
+    .header-inner { display: flex; align-items: center; gap: 16px; width: 100%; max-width: 80%; }
+    .hdr-logo { display: flex; align-items: center; gap: 11px; flex-shrink: 0; }
     .header-logo {
       width: 44px; height: 44px;
-      object-fit: contain;
+      border-radius: 10px;
       background: #fff;
-      border-radius: 4px;
-      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
+      padding: 4px;
+      box-shadow: 0 1px 6px rgba(0,0,0,.18);
     }
+    .header-logo img { width: 36px; height: 36px; object-fit: contain; }
     .header-title {
       color: #fff;
       font-family: 'Playfair Display', serif;
@@ -245,14 +245,14 @@
     .qty-info strong { color: var(--text); }
 
     @media (max-width: 600px) {
-      header { padding: 1rem; }
-      .header-inner { max-width: 100%; }
+      header { padding: 0.6rem 1rem 0.75rem; height: auto; }
+      .header-inner { max-width: 100%; padding: 0; }
       .header-title { font-size: 17px; }
       .card { padding: 1.5rem 1.25rem; border-radius: var(--radius-lg); }
     }
 
     .logo-txt { display: flex; flex-direction: column; justify-content: center; }
-    .logo-txt b { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #fff; display: block; line-height: 1.25; font-weight: 700; }
+    .logo-txt b { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #fff; display: block; line-height: 1.25; }
     .logo-txt small { font-size: .58rem; color: rgba(255,255,255,.45); letter-spacing: 1.8px; text-transform: uppercase; margin-top: 1px; }
     .hdr-ttl { color: rgba(255,255,255,.75); font-size: .68rem; letter-spacing: 2px; text-transform: uppercase; margin-left: auto; font-weight: 500; white-space: nowrap; }
   </style>
@@ -261,16 +261,16 @@
 
 <header>
   <div class="header-inner">
-    <div style="display:flex;align-items:center;gap:11px;flex-shrink:0;">
-      <div class="header-logo" style="display:flex;align-items:center;justify-content:center;">
-        <img id="header-logo" src="https://raw.githubusercontent.com/caspn/Inventario/main/Logo%20Elenco%20Medici.png" alt="CAS Pordenone" style="width:36px;height:36px;object-fit:contain;">
+    <div class="hdr-logo">
+      <div class="header-logo">
+        <img src="https://raw.githubusercontent.com/caspn/Inventario/main/Logo%20Elenco%20Medici.png" alt="CAS Pordenone">
       </div>
       <div class="logo-txt">
         <b>Comitato Sanitario<br>di Pordenone</b>
       </div>
     </div>
     <span class="hdr-ttl">Registrazione movimenti</span>
-    <a href="index.html" class="header-btn" style="margin-left:16px;">← Archivio</a>
+    <a href="index.html" class="header-btn" style="flex-shrink:0;margin-left:8px;">← Archivio</a>
   </div>
 </header>
 
