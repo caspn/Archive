@@ -84,19 +84,28 @@
       flex: 1;
     }
     .header-btn {
-      color: #fff;
-      border: 1.5px solid rgba(255,255,255,0.5);
-      border-radius: var(--radius);
-      padding: 7px 18px;
-      font-size: 13px;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 500;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: background 0.15s;
       flex-shrink: 0;
+      margin-left: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 15px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.07);
+      color: rgba(255,255,255,0.78) !important;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.71rem;
+      font-weight: 600;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      text-decoration: none !important;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
     }
-    .header-btn:hover { background: rgba(255,255,255,0.15); }
+    .header-btn:hover { background: rgba(255,255,255,0.14); color: #fff !important; border-color: rgba(255,255,255,0.28); }
+    .header-btn:visited { color: rgba(255,255,255,0.78) !important; text-decoration: none !important; }
 
     /* ── MAIN ── */
     main {
@@ -273,7 +282,7 @@
       </div>
     </div>
     <span class="hdr-ttl">Registrazione movimenti</span>
-    <a href="index.html" class="header-btn" style="flex-shrink:0;margin-left:8px;">← Archivio</a>
+    <a href="index.html" class="header-btn" style="flex-shrink:0;margin-left:8px;">Archivio</a>
   </div>
 </header>
 
